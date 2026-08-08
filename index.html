@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lions of God — A Large-Scale Historical Action Game</title>
+<meta name="description" content="Lions of God is a large-scale historical action game set in early Islamic history. Fight as Hamza ibn Abdul-Muttalib at the Battle of Badr. Playable demo complete. In development by Crescent Warriors Studio.">
+<meta property="og:title" content="Lions of God">
+<meta property="og:description" content="A large-scale historical action game set in early Islamic history. Playable demo of the Battle of Badr is complete.">
+<meta property="og:image" content="https://lionsofgodstudio.com/img/hero.jpg">
+<meta property="og:url" content="https://lionsofgodstudio.com">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%94%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --sand:#d9c39a; --sand-dim:#a08a63; --ink:#12100c; --ink2:#1c1913;
+    --gold:#c9a24b; --gold-bright:#e6c26a; --text:#eae2d0; --text-dim:#b8ac92;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink); color:var(--text);
+    font-family:Georgia,'Times New Roman',serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .hero{
+    position:relative; min-height:92vh; display:flex; flex-direction:column;
+    justify-content:flex-end; align-items:center; text-align:center;
+    background:url('img/hero.jpg') center 30%/cover no-repeat;
+  }
+  .hero::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(18,16,12,.25) 0%, rgba(18,16,12,.05) 40%, rgba(18,16,12,.92) 95%);
+  }
+  .hero-inner{position:relative; z-index:1; padding:0 24px 64px}
+  .kicker{
+    letter-spacing:.35em; text-transform:uppercase; font-size:.78rem;
+    color:var(--gold-bright); margin-bottom:14px;
+  }
+  h1{
+    font-size:clamp(2.6rem,7vw,5rem); letter-spacing:.08em; font-weight:normal;
+    color:#f5edda; text-shadow:0 2px 24px rgba(0,0,0,.7);
+  }
+  .arabic{
+    font-size:clamp(1.3rem,3vw,1.9rem); color:var(--gold); margin-top:6px;
+    font-family:'Amiri','Traditional Arabic',Georgia,serif;
+  }
+  .tagline{
+    max-width:620px; margin:18px auto 0; color:var(--text-dim);
+    font-size:clamp(1rem,2vw,1.15rem); font-style:italic;
+  }
+  .badge{
+    display:inline-block; margin-top:26px; padding:10px 26px;
+    border:1px solid var(--gold); color:var(--gold-bright);
+    letter-spacing:.22em; text-transform:uppercase; font-size:.72rem;
+  }
+  section{max-width:980px; margin:0 auto; padding:72px 24px}
+  h2{
+    font-weight:normal; letter-spacing:.24em; text-transform:uppercase;
+    font-size:.95rem; color:var(--gold-bright); margin-bottom:28px; text-align:center;
+  }
+  h2::after{content:''; display:block; width:52px; height:1px; background:var(--gold); margin:16px auto 0; opacity:.6}
+  .lead{font-size:clamp(1.05rem,2vw,1.25rem); text-align:center; max-width:760px; margin:0 auto; color:var(--text)}
+  .lead + .lead{margin-top:22px; color:var(--text-dim); font-size:clamp(.98rem,1.8vw,1.1rem)}
+  .features{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:28px; margin-top:8px;
+  }
+  .feature{
+    background:var(--ink2); border:1px solid rgba(201,162,75,.25); padding:30px 26px;
+  }
+  .feature h3{
+    font-weight:normal; color:var(--gold-bright); letter-spacing:.12em;
+    text-transform:uppercase; font-size:.85rem; margin-bottom:12px;
+  }
+  .feature p{color:var(--text-dim); font-size:.98rem}
+  .shots{display:grid; gap:20px; grid-template-columns:1fr; margin-top:8px}
+  .shots img{width:100%; display:block; border:1px solid rgba(201,162,75,.3)}
+  .shots figcaption{
+    font-size:.8rem; color:var(--sand-dim); letter-spacing:.08em; margin-top:8px;
+    text-align:center; font-style:italic;
+  }
+  .respect{
+    border-top:1px solid rgba(201,162,75,.25); border-bottom:1px solid rgba(201,162,75,.25);
+    background:var(--ink2);
+  }
+  .respect p{max-width:760px; margin:0 auto; text-align:center; color:var(--text-dim); font-size:1rem}
+  .contact{text-align:center}
+  .contact a{
+    color:var(--gold-bright); text-decoration:none; border-bottom:1px solid rgba(201,162,75,.5);
+    font-size:clamp(1rem,2vw,1.15rem);
+  }
+  .contact a:hover{color:#fff}
+  footer{
+    text-align:center; padding:40px 24px 48px; color:var(--sand-dim);
+    font-size:.82rem; letter-spacing:.06em; border-top:1px solid rgba(201,162,75,.15);
+  }
+  @media (min-width:700px){ .shots{grid-template-columns:1fr 1fr} }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Crescent Warriors Studio presents</p>
+    <h1>LIONS OF GOD</h1>
+    <p class="arabic" dir="rtl">أُسُود الله</p>
+    <p class="tagline">A large-scale historical action game set in early Islamic history.</p>
+    <span class="badge">Playable Demo Complete &nbsp;·&nbsp; In Development</span>
+  </div>
+</header>
+
+<section>
+  <h2>The Game</h2>
+  <p class="lead">
+    One warrior against a thousand. Stand as <strong>Hamza ibn Abdul-Muttalib</strong> — Asad Allah,
+    the Lion of God — on the plain of Badr, where 313 believers faced an army three times their size.
+  </p>
+  <p class="lead">
+    Lions of God is a campaign of the defining battles of early Islamic history, built in Unreal Engine 5.
+    The first chapter — the Battle of Badr — is complete and playable today: capture the wells, answer the
+    duel, hold the line, and turn the day.
+  </p>
+</section>
+
+<section>
+  <h2>Forged From History</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>Fight as the Lion</h3>
+      <p>Fluid one-versus-many combat: combos, duels, and the Sawlah — an unleashed charge that turns the tide of battle.</p>
+    </div>
+    <div class="feature">
+      <h3>A True Battlefield</h3>
+      <p>Hundreds of warriors clash on screen at once. Capture wells, protect the camp, and face the commanders of Quraysh.</p>
+    </div>
+    <div class="feature">
+      <h3>Told With Respect</h3>
+      <p>Grounded in the historical sources, with Arabic voice acting and an unwavering commitment to authenticity and reverence.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>From the Demo</h2>
+  <div class="shots">
+    <figure>
+      <img src="img/quraysh.jpg" alt="The Quraysh army arrayed for battle on the plain of Badr" loading="lazy">
+      <figcaption>The army of Quraysh takes the field</figcaption>
+    </figure>
+    <figure>
+      <img src="img/valley.jpg" alt="Hamza overlooking the valley of Badr" loading="lazy">
+      <figcaption>The valley of Badr</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="respect">
+  <p>
+    Lions of God portrays the heroes of early Islamic history with care and reverence.
+    In keeping with Islamic tradition, the Prophet Muhammad ﷺ is never depicted.
+  </p>
+</section>
+
+<section class="contact">
+  <h2>Contact</h2>
+  <p><a href="mailto:studio@lionsofgodstudio.com">studio@lionsofgodstudio.com</a></p>
+</section>
+
+<footer>
+  © 2026 Crescent Warriors Studio FZ-LLC · Lions of God™ · All rights reserved
+</footer>
+
+</body>
+</html>
