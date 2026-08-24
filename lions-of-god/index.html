@@ -105,6 +105,20 @@
     text-transform:uppercase; font-size:.75rem; transition:background .2s,color .2s;
   }
   .social-row a:hover{background:var(--gold); color:var(--ink)}
+  .kit-embed{max-width:560px; margin:8px auto 0}
+  .kit-embed .formkit-form[data-uid]{background:transparent!important; border:none!important; box-shadow:none!important; max-width:560px!important; margin:0 auto!important}
+  .kit-embed .formkit-form[data-uid] .formkit-input{
+    background:var(--ink2)!important; border:1px solid rgba(201,162,75,.5)!important;
+    color:var(--text)!important; font-family:Georgia,serif!important; border-radius:0!important;
+  }
+  .kit-embed .formkit-form[data-uid] .formkit-input::placeholder{color:var(--sand-dim)!important}
+  .kit-embed .formkit-form[data-uid] .formkit-submit{
+    background:var(--gold)!important; color:var(--ink)!important; border-radius:0!important;
+    font-family:Georgia,serif!important; letter-spacing:.14em!important; text-transform:uppercase!important;
+  }
+  .kit-embed .formkit-form[data-uid] .formkit-submit:hover > span{background:var(--gold-bright)!important}
+  .kit-embed .formkit-form[data-uid] .formkit-powered-by-convertkit-container{display:none!important}
+  .kit-note{text-align:center; color:var(--sand-dim); font-size:.82rem; margin-top:14px; font-style:italic}
   .home-link{color:var(--sand-dim); text-decoration:none}
   .home-link:hover{color:var(--gold-bright)}
   @media (min-width:700px){ .shots{grid-template-columns:1fr 1fr} }
@@ -198,6 +212,15 @@
     Lions of God portrays the heroes of early Islamic history with care and reverence.
     In keeping with Islamic tradition, the Prophet Muhammad ﷺ is never depicted.
   </p>
+</section>
+
+<section>
+  <h2>Join the March</h2>
+  <p class="lead" style="margin-bottom:26px">Be first to every devlog and announcement — straight from the forge to your inbox.</p>
+  <div class="kit-embed">
+    <script async data-uid="ec66d4965f" src="https://lions-of-god.kit.com/ec66d4965f/index.js"></script>
+  </div>
+  <p class="kit-note">No spam. Unsubscribe any time.</p>
 </section>
 
 <section>
