@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lions of God — A Large-Scale Historical Action Game</title>
-<meta name="description" content="Lions of God is a large-scale historical action game set in early Islamic history. Fight as Hamza ibn Abdul-Muttalib at the Battle of Badr. In development in Unreal Engine 5 by Crescent Warriors Studio.">
-<meta property="og:title" content="Lions of God">
-<meta property="og:description" content="A large-scale historical action game set in early Islamic history. In development in Unreal Engine 5.">
-<meta property="og:image" content="https://lionsofgodstudio.com/img/hero.jpg">
-<meta property="og:url" content="https://lionsofgodstudio.com">
+<title>Crescent Warriors Studio</title>
+<meta name="description" content="Crescent Warriors Studio is an independent game studio crafting large-scale historical action games from the great stories of early Islamic history. Currently developing Lions of God.">
+<meta property="og:title" content="Crescent Warriors Studio">
+<meta property="og:description" content="An independent game studio crafting large-scale historical action games. Currently developing Lions of God.">
+<meta property="og:image" content="https://crescentwarriorsstudio.com/lions-of-god/img/hero.jpg">
+<meta property="og:url" content="https://crescentwarriorsstudio.com/">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%94%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://crescentwarriorsstudio.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%99%3C/text%3E%3C/svg%3E">
 <style>
   :root{
     --sand:#d9c39a; --sand-dim:#a08a63; --ink:#12100c; --ink2:#1c1913;
@@ -24,37 +25,26 @@
     line-height:1.7; -webkit-font-smoothing:antialiased;
   }
   .hero{
-    position:relative; min-height:92vh; display:flex; flex-direction:column;
-    justify-content:flex-end; align-items:center; text-align:center;
-    background:url('img/hero.jpg') center 30%/cover no-repeat;
+    min-height:62vh; display:flex; flex-direction:column;
+    justify-content:center; align-items:center; text-align:center;
+    padding:80px 24px 64px;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 110%, rgba(201,162,75,.14), transparent 70%),
+      var(--ink);
+    border-bottom:1px solid rgba(201,162,75,.2);
   }
-  .hero::after{
-    content:''; position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(18,16,12,.3) 0%, rgba(18,16,12,.1) 35%, rgba(18,16,12,.55) 70%, rgba(18,16,12,.95) 96%);
-  }
-  .hero-inner{position:relative; z-index:1; padding:0 24px 64px}
+  .crescent{font-size:2.2rem; margin-bottom:18px; opacity:.9}
   .kicker{
-    letter-spacing:.35em; text-transform:uppercase; font-size:.78rem;
-    color:var(--gold-bright); margin-bottom:14px;
-    text-shadow:0 1px 6px rgba(0,0,0,.95), 0 0 18px rgba(0,0,0,.85), 0 0 36px rgba(0,0,0,.7);
+    letter-spacing:.35em; text-transform:uppercase; font-size:.75rem;
+    color:var(--sand-dim); margin-bottom:16px;
   }
   h1{
-    font-size:clamp(2.6rem,7vw,5rem); letter-spacing:.08em; font-weight:normal;
-    color:#f5edda; text-shadow:0 2px 24px rgba(0,0,0,.7);
-  }
-  .arabic{
-    font-size:clamp(1.3rem,3vw,1.9rem); color:var(--gold-bright); margin-top:6px;
-    font-family:'Amiri','Traditional Arabic',Georgia,serif;
-    text-shadow:0 1px 6px rgba(0,0,0,.95), 0 0 18px rgba(0,0,0,.85), 0 0 36px rgba(0,0,0,.7);
+    font-size:clamp(2rem,5.5vw,3.6rem); letter-spacing:.1em; font-weight:normal;
+    color:#f5edda; text-transform:uppercase;
   }
   .tagline{
-    max-width:620px; margin:18px auto 0; color:var(--text-dim);
-    font-size:clamp(1rem,2vw,1.15rem); font-style:italic;
-  }
-  .badge{
-    display:inline-block; margin-top:26px; padding:10px 26px;
-    border:1px solid var(--gold); color:var(--gold-bright);
-    letter-spacing:.22em; text-transform:uppercase; font-size:.72rem;
+    max-width:640px; margin:20px auto 0; color:var(--text-dim);
+    font-size:clamp(1rem,2vw,1.18rem); font-style:italic;
   }
   section{max-width:980px; margin:0 auto; padding:72px 24px}
   h2{
@@ -62,31 +52,34 @@
     font-size:.95rem; color:var(--gold-bright); margin-bottom:28px; text-align:center;
   }
   h2::after{content:''; display:block; width:52px; height:1px; background:var(--gold); margin:16px auto 0; opacity:.6}
-  .lead{font-size:clamp(1.05rem,2vw,1.25rem); text-align:center; max-width:760px; margin:0 auto; color:var(--text)}
-  .lead + .lead{margin-top:22px; color:var(--text-dim); font-size:clamp(.98rem,1.8vw,1.1rem)}
-  .features{
-    display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:28px; margin-top:8px;
+  .game-card{
+    display:block; position:relative; border:1px solid rgba(201,162,75,.35);
+    text-decoration:none; color:var(--text); overflow:hidden;
   }
-  .feature{
-    background:var(--ink2); border:1px solid rgba(201,162,75,.25); padding:30px 26px;
+  .game-card img{width:100%; display:block; aspect-ratio:21/9; object-fit:cover; object-position:center 30%; transition:transform .4s}
+  .game-card:hover img{transform:scale(1.03)}
+  .game-card .card-body{
+    position:absolute; inset:auto 0 0 0; padding:36px 28px 28px; text-align:center;
+    background:linear-gradient(180deg, transparent, rgba(18,16,12,.92) 60%);
   }
-  .feature h3{
-    font-weight:normal; color:var(--gold-bright); letter-spacing:.12em;
-    text-transform:uppercase; font-size:.85rem; margin-bottom:12px;
+  .game-card h3{
+    font-weight:normal; letter-spacing:.14em; font-size:clamp(1.4rem,3.5vw,2rem);
+    color:#f5edda; text-transform:uppercase;
+    text-shadow:0 2px 16px rgba(0,0,0,.8);
   }
-  .feature p{color:var(--text-dim); font-size:.98rem}
-  .shots{display:grid; gap:20px; grid-template-columns:1fr; margin-top:8px}
-  .shots img{width:100%; display:block; border:1px solid rgba(201,162,75,.3); aspect-ratio:16/9; object-fit:cover}
-  .shots figcaption{
-    font-size:.8rem; color:var(--sand-dim); letter-spacing:.08em; margin-top:8px;
-    text-align:center; font-style:italic;
+  .game-card .arabic{
+    font-family:'Amiri','Traditional Arabic',Georgia,serif; color:var(--gold-bright);
+    font-size:clamp(.95rem,2vw,1.2rem); margin-top:2px;
+    text-shadow:0 1px 8px rgba(0,0,0,.9);
   }
-  .respect{
-    border-top:1px solid rgba(201,162,75,.25); border-bottom:1px solid rgba(201,162,75,.25);
-    background:var(--ink2);
+  .game-card p.desc{color:var(--text-dim); font-size:.95rem; margin-top:10px}
+  .game-card .cta{
+    display:inline-block; margin-top:16px; padding:9px 26px;
+    border:1px solid var(--gold); color:var(--gold-bright);
+    letter-spacing:.2em; text-transform:uppercase; font-size:.72rem;
   }
-  .respect p{max-width:760px; margin:0 auto; text-align:center; color:var(--text-dim); font-size:1rem}
+  .about p{max-width:720px; margin:0 auto; text-align:center; color:var(--text-dim); font-size:clamp(1rem,1.9vw,1.12rem)}
+  .about p + p{margin-top:20px}
   .contact{text-align:center}
   .contact a{
     color:var(--gold-bright); text-decoration:none; border-bottom:1px solid rgba(201,162,75,.5);
@@ -97,106 +90,49 @@
     text-align:center; padding:40px 24px 48px; color:var(--sand-dim);
     font-size:.82rem; letter-spacing:.06em; border-top:1px solid rgba(201,162,75,.15);
   }
-  @media (min-width:700px){ .shots{grid-template-columns:1fr 1fr} }
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <div class="hero-inner">
-    <p class="kicker">Crescent Warriors Studio presents</p>
-    <h1>LIONS OF GOD</h1>
-    <p class="arabic" dir="rtl">أُسُود الله</p>
-    <p class="tagline">A large-scale historical action game set in early Islamic history.</p>
-    <span class="badge">In Development</span>
-  </div>
+  <div class="crescent">🌙</div>
+  <h1>Crescent Warriors Studio</h1>
+  <p class="tagline">An independent game studio crafting large-scale historical action games from the great stories of early Islamic history.</p>
 </header>
 
 <section>
-  <h2>The Game</h2>
-  <p class="lead">
-    One warrior against a thousand. Stand as <strong>Hamza ibn Abdul-Muttalib</strong> — Asadullah,
-    the Lion of God — on the sands of Badr, where 313 believers faced an army three times their size.
-  </p>
-  <p class="lead">
-    Lions of God is a campaign of the defining battles of early Islamic history, built in Unreal Engine 5.
-    Development begins where legends were forged — the Battle of Badr: capture the wells, answer the duel,
-    hold the line, and turn the day.
-  </p>
-</section>
-
-<section>
-  <h2>Forged From History</h2>
-  <div class="features">
-    <div class="feature">
-      <h3>Fight as the Lion</h3>
-      <p>Fluid one-versus-many combat: combos, duels, and the Sawlah — an unleashed charge that turns the tide of battle.</p>
+  <h2>Now Forging</h2>
+  <a class="game-card" href="/lions-of-god/">
+    <img src="/lions-of-god/img/hero.jpg" alt="Lions of God — Hamza ibn Abdul-Muttalib stands before the armies at Badr">
+    <div class="card-body">
+      <h3>Lions of God</h3>
+      <p class="arabic" dir="rtl">أُسُود الله</p>
+      <p class="desc">One warrior against a thousand, on the sands of Badr. In development.</p>
+      <span class="cta">Enter the Battlefield</span>
     </div>
-    <div class="feature">
-      <h3>A True Battlefield</h3>
-      <p>Hundreds of warriors clash on screen at once. Capture wells, protect the camp, and face the commanders of Quraysh.</p>
-    </div>
-    <div class="feature">
-      <h3>Told With Respect</h3>
-      <p>Grounded in the historical sources, with Arabic voice acting and an unwavering commitment to authenticity and reverence.</p>
-    </div>
-  </div>
+  </a>
 </section>
 
-<section>
-  <h2>From the Battlefield</h2>
-  <div class="shots">
-    <figure>
-      <img src="img/sawlah.jpg" alt="The Sawlah — a spiral of fire erupts around Hamza mid-strike" loading="lazy">
-      <figcaption>The Sawlah unleashed</figcaption>
-    </figure>
-    <figure>
-      <img src="img/melee.jpg" alt="Hamza leaps through the melee at the wells of Badr" loading="lazy">
-      <figcaption>One against many</figcaption>
-    </figure>
-    <figure>
-      <img src="img/clash.jpg" alt="The two armies exchange blows at close quarters" loading="lazy">
-      <figcaption>The armies meet</figcaption>
-    </figure>
-    <figure>
-      <img src="img/quraysh.jpg" alt="The Quraysh army arrayed for battle on the plain of Badr" loading="lazy">
-      <figcaption>The army of Quraysh takes the field</figcaption>
-    </figure>
-    <figure>
-      <img src="img/valley.jpg" alt="Hamza overlooking the valley of Badr" loading="lazy">
-      <figcaption>The valley of Badr</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section>
-  <h2>The Vision</h2>
-  <div class="shots">
-    <figure>
-      <img src="img/concept_charge.jpg" alt="Concept art: a mounted warrior charges into battle at golden hour" loading="lazy">
-      <figcaption>Concept art — the charge</figcaption>
-    </figure>
-    <figure>
-      <img src="img/concept_ridge.jpg" alt="Concept art: a lone warrior overlooks the armies gathered in the valley of Badr" loading="lazy">
-      <figcaption>Concept art — before the battle</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="respect">
+<section class="about">
+  <h2>The Studio</h2>
   <p>
-    Lions of God portrays the heroes of early Islamic history with care and reverence.
-    In keeping with Islamic tradition, the Prophet Muhammad ﷺ is never depicted.
+    Crescent Warriors Studio was founded on a simple conviction: the defining moments of early
+    Islamic history deserve to be experienced with the same craft, scale, and spectacle as any
+    epic ever put on screen.
+  </p>
+  <p>
+    We build our worlds from the historical sources, portray their heroes with reverence,
+    and hold one line above all — authenticity and respect, in every frame.
   </p>
 </section>
 
 <section class="contact">
   <h2>Contact</h2>
-  <p><a href="mailto:studio@lionsofgodstudio.com">studio@lionsofgodstudio.com</a></p>
+  <p><a href="mailto:info@crescentwarriorsstudio.com">info@crescentwarriorsstudio.com</a></p>
 </section>
 
 <footer>
-  © 2026 Crescent Warriors Studio FZ-LLC · Lions of God™ · All rights reserved
+  © 2026 Crescent Warriors Studio FZ-LLC · All rights reserved
 </footer>
 
 </body>
