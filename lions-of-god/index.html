@@ -186,10 +186,29 @@
   }
   .to-top.show{opacity:1; visibility:visible; transform:none}
   .to-top:hover{background:var(--gold); color:var(--ink)}
-  @media (max-width:600px){
+  .nav-toggle{
+    display:none; margin-left:auto; width:42px; height:38px; padding:0; cursor:pointer;
+    background:transparent; border:1px solid rgba(201,162,75,.6); color:var(--gold-bright);
+    font-size:1.25rem; line-height:1; font-family:inherit;
+  }
+  .nav-toggle:hover{background:rgba(201,162,75,.15)}
+  @media (max-width:760px){
     .nav{padding:10px 14px}
-    .nav-brand{font-size:.7rem}
-    .nav-links a{font-size:.64rem; padding:7px 7px}
+    .nav-brand{font-size:.68rem; letter-spacing:.14em}
+    .nav-toggle{display:inline-flex; align-items:center; justify-content:center}
+    .nav-links{
+      display:none; position:fixed; top:58px; left:0; right:0; margin:0; padding:8px 0 14px;
+      flex-direction:column; gap:0; overflow:visible;
+      background:rgba(18,16,12,.97); border-bottom:1px solid rgba(201,162,75,.25);
+      box-shadow:0 12px 30px rgba(0,0,0,.5);
+    }
+    .nav.open{background:rgba(18,16,12,.97)}
+    .nav.open .nav-links{display:flex}
+    .nav-links a{
+      font-size:.8rem; padding:14px 24px; text-align:center; text-shadow:none;
+      border-bottom:1px solid rgba(201,162,75,.12);
+    }
+    .nav-links a.nav-cta{margin:12px 24px 0; padding:12px; border:1px solid var(--gold)}
     .to-top{right:14px; bottom:14px; width:42px; height:42px}
   }
   @media (min-width:700px){ .shots{grid-template-columns:1fr 1fr} }
@@ -310,7 +329,8 @@
 
 <nav class="nav" aria-label="Page">
   <a class="nav-brand" href="/">Crescent Warriors Studio</a>
-  <div class="nav-links">
+  <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+  <div class="nav-links" id="nav-links">
     <a href="#game">The Game</a>
     <a href="#gallery">Gallery</a>
     <a href="#devlog">Devlog</a>
@@ -517,6 +537,19 @@
   }
   window.addEventListener('scroll', onScroll, {passive:true});
   onScroll();
+  var tgl=document.querySelector('.nav-toggle');
+  function closeMenu(){ if(nav){ nav.classList.remove('open'); } if(tgl){ tgl.setAttribute('aria-expanded','false'); tgl.textContent='☰'; } }
+  if(tgl && nav){
+    tgl.addEventListener('click', function(){
+      var open=!nav.classList.contains('open');
+      nav.classList.toggle('open', open);
+      tgl.setAttribute('aria-expanded', open?'true':'false');
+      tgl.textContent=open?'✕':'☰';
+    });
+    nav.querySelectorAll('.nav-links a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeMenu(); } });
+    window.addEventListener('resize', function(){ if(window.innerWidth>760){ closeMenu(); } });
+  }
   if(top){ top.addEventListener('click', function(e){ e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); }); }
 })();
 </script>
