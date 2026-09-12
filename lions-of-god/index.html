@@ -3,14 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lions of God — A Large-Scale Historical Action Game</title>
-<meta name="description" content="Lions of God is a large-scale historical action game set in early Islamic history. Fight as Hamza ibn Abdul-Muttalib at the Battle of Badr. In development in Unreal Engine 5 by Crescent Warriors Studio.">
+<title>Lions of God — Islamic History Action Game | Unreal Engine 5</title>
+<meta name="description" content="Lions of God is a large-scale action game of the great battles of early Islamic history, built in Unreal Engine 5. Development begins on the sands of Badr as Hamza ibn Abdul-Muttalib, Asadullah. Now crowdfunding on LaunchGood.">
 <meta property="og:title" content="Lions of God">
 <meta property="og:description" content="A large-scale historical action game set in early Islamic history. In development in Unreal Engine 5. Now crowdfunding on LaunchGood.">
 <meta property="og:image" content="https://crescentwarriorsstudio.com/lions-of-god/img/hero.jpg">
 <meta property="og:url" content="https://crescentwarriorsstudio.com/lions-of-god/">
 <link rel="canonical" href="https://crescentwarriorsstudio.com/lions-of-god/">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Crescent Warriors Studio">
+<meta property="og:image:width" content="1920">
+<meta property="og:image:height" content="1080">
+<meta property="og:image:alt" content="Hamza ibn Abdul-Muttalib stands before the armies on the sands of Badr">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lions of God — Islamic History Action Game">
+<meta name="twitter:description" content="A large-scale action game of the great battles of early Islamic history. In development in Unreal Engine 5. Now crowdfunding on LaunchGood.">
+<meta name="twitter:image" content="https://crescentwarriorsstudio.com/lions-of-god/img/hero.jpg">
+<link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%94%EF%B8%8F%3C/text%3E%3C/svg%3E">
 <style>
   :root{
@@ -134,8 +143,115 @@
   .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
   .support{border-top:1px solid rgba(201,162,75,.25); border-bottom:1px solid rgba(201,162,75,.25); background:var(--ink2)}
   .cta-row{text-align:center; margin-top:30px}
+  .faq{max-width:760px; margin:0 auto}
+  .faq details{border-top:1px solid rgba(201,162,75,.25); padding:18px 0}
+  .faq details:last-child{border-bottom:1px solid rgba(201,162,75,.25)}
+  .faq summary{cursor:pointer; color:var(--gold-bright); letter-spacing:.04em; font-size:1.05rem; list-style:none; display:flex; justify-content:space-between; align-items:center}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:'+'; color:var(--gold); font-size:1.3rem; margin-left:16px}
+  .faq details[open] summary::after{content:'\2212'}
+  .faq p{color:var(--text-dim); margin-top:12px; font-size:1rem}
+  .faq a{color:var(--gold-bright)}
   @media (min-width:700px){ .shots{grid-template-columns:1fr 1fr} }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://crescentwarriorsstudio.com/#org",
+      "name": "Crescent Warriors Studio",
+      "url": "https://crescentwarriorsstudio.com/",
+      "logo": "https://crescentwarriorsstudio.com/lions-of-god/img/hero.jpg",
+      "email": "info@crescentwarriorsstudio.com",
+      "sameAs": [
+        "https://www.youtube.com/@lionsofgodgame",
+        "https://www.instagram.com/lionsofgodgame",
+        "https://launchgood.com/lionsofgod"
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://crescentwarriorsstudio.com/lions-of-god/#game",
+      "name": "Lions of God",
+      "alternateName": "أُسُود الله",
+      "url": "https://crescentwarriorsstudio.com/lions-of-god/",
+      "image": "https://crescentwarriorsstudio.com/lions-of-god/img/hero.jpg",
+      "description": "A large-scale action game of the great battles of early Islamic history, built in Unreal Engine 5. Development begins on the sands of Badr as Hamza ibn Abdul-Muttalib, Asadullah.",
+      "genre": ["Action", "Historical", "Hack and slash"],
+      "gamePlatform": "PC",
+      "applicationCategory": "Game",
+      "operatingSystem": "Windows",
+      "inLanguage": ["en", "ar"],
+      "author": { "@id": "https://crescentwarriorsstudio.com/#org" },
+      "publisher": { "@id": "https://crescentwarriorsstudio.com/#org" },
+      "character": [{ "@type": "Person", "name": "Hamza ibn Abdul-Muttalib" }],
+      "contentLocation": { "@type": "Place", "name": "Badr, Arabia" },
+      "trailer": { "@id": "https://crescentwarriorsstudio.com/lions-of-god/#video-support" }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://crescentwarriorsstudio.com/lions-of-god/#video-support",
+      "name": "Lions of God — Support the Game",
+      "description": "Why Lions of God is being made, what has been built so far in Unreal Engine 5, and how to support the campaign on LaunchGood.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/yBOVUzYAtGg/maxresdefault.jpg",
+      "uploadDate": "2026-09-11",
+      "duration": "PT4M48S",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/yBOVUzYAtGg",
+      "publisher": { "@id": "https://crescentwarriorsstudio.com/#org" }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://crescentwarriorsstudio.com/lions-of-god/#video-devlog-1",
+      "name": "Lions of God — Devlog 1",
+      "description": "Devlog Episode 1: how Lions of God began, the combat and battlefield built so far in Unreal Engine 5, and where development stands today.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/GMLQcrj6OEQ/maxresdefault.jpg",
+      "uploadDate": "2026-09-11",
+      "duration": "PT5M57S",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/GMLQcrj6OEQ",
+      "publisher": { "@id": "https://crescentwarriorsstudio.com/#org" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Crescent Warriors Studio", "item": "https://crescentwarriorsstudio.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Lions of God", "item": "https://crescentwarriorsstudio.com/lions-of-god/" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Lions of God?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Lions of God is a large-scale action game of the great battles of early Islamic history, built in Unreal Engine 5 by Crescent Warriors Studio. You fight as one hero against entire armies. Development begins on the sands of Badr, playing as Hamza ibn Abdul-Muttalib, Asadullah, the Lion of God." }
+        },
+        {
+          "@type": "Question",
+          "name": "What platforms will Lions of God be on, and when?",
+          "acceptedAnswer": { "@type": "Answer", "text": "PC first. The game is in development and there is no release date yet. Subscribe on YouTube or join the email list to follow every milestone." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the Prophet Muhammad ﷺ depicted in the game?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. In keeping with Islamic tradition, the Prophet Muhammad ﷺ is never depicted, and the heroes of early Islamic history are portrayed with care and reverence, grounded in the historical sources." }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I support Lions of God?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Contribute on LaunchGood with a one-time gift or a monthly gift, subscribe on YouTube, follow on Instagram, and share the devlog with someone who would love to see this game exist." }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is making Lions of God?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Crescent Warriors Studio, an independent studio founded to bring the defining moments of early Islamic history to life with the craft, scale, and spectacle of any epic put on screen." }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -205,23 +321,23 @@
   <h2>From the Battlefield</h2>
   <div class="shots">
     <figure>
-      <img src="img/sawlah.jpg" alt="The Sawlah — a spiral of fire erupts around Hamza mid-strike" loading="lazy">
+      <img src="img/sawlah.jpg" width="1600" height="900" alt="The Sawlah — a spiral of fire erupts around Hamza mid-strike" loading="lazy">
       <figcaption>The Sawlah unleashed</figcaption>
     </figure>
     <figure>
-      <img src="img/melee.jpg" alt="Hamza leaps through the melee at the wells of Badr" loading="lazy">
+      <img src="img/melee.jpg" width="1600" height="900" alt="Hamza leaps through the melee at the wells of Badr" loading="lazy">
       <figcaption>One against many</figcaption>
     </figure>
     <figure>
-      <img src="img/clash.jpg" alt="The two armies exchange blows at close quarters" loading="lazy">
+      <img src="img/clash.jpg" width="1600" height="900" alt="The two armies exchange blows at close quarters" loading="lazy">
       <figcaption>The armies meet</figcaption>
     </figure>
     <figure>
-      <img src="img/quraysh.jpg" alt="The Quraysh army arrayed for battle on the plain of Badr" loading="lazy">
+      <img src="img/quraysh.jpg" width="1600" height="900" alt="The Quraysh army arrayed for battle on the plain of Badr" loading="lazy">
       <figcaption>The army of Quraysh takes the field</figcaption>
     </figure>
     <figure>
-      <img src="img/valley.jpg" alt="Hamza overlooking the valley of Badr" loading="lazy">
+      <img src="img/valley.jpg" width="1600" height="900" alt="Hamza overlooking the valley of Badr" loading="lazy">
       <figcaption>The valley of Badr</figcaption>
     </figure>
   </div>
@@ -242,11 +358,11 @@
   <h2>The Vision</h2>
   <div class="shots">
     <figure>
-      <img src="img/concept_charge.jpg" alt="Concept art: a mounted warrior charges into battle at golden hour" loading="lazy">
+      <img src="img/concept_charge.jpg" width="1600" height="1066" alt="Concept art: a mounted warrior charges into battle at golden hour" loading="lazy">
       <figcaption>Concept art — the charge</figcaption>
     </figure>
     <figure>
-      <img src="img/concept_ridge.jpg" alt="Concept art: a lone warrior overlooks the armies gathered in the valley of Badr" loading="lazy">
+      <img src="img/concept_ridge.jpg" width="1600" height="900" alt="Concept art: a lone warrior overlooks the armies gathered in the valley of Badr" loading="lazy">
       <figcaption>Concept art — before the battle</figcaption>
     </figure>
   </div>
@@ -257,6 +373,32 @@
     Lions of God portrays the heroes of early Islamic history with care and reverence.
     In keeping with Islamic tradition, the Prophet Muhammad ﷺ is never depicted.
   </p>
+</section>
+
+<section id="faq">
+  <h2>Questions</h2>
+  <div class="faq">
+    <details>
+      <summary>What is Lions of God?</summary>
+      <p>A large-scale action game of the great battles of early Islamic history, built in Unreal Engine 5 by Crescent Warriors Studio. You fight as one hero against entire armies. Development begins on the sands of Badr, playing as Hamza ibn Abdul-Muttalib — Asadullah, the Lion of God.</p>
+    </details>
+    <details>
+      <summary>What platforms will it be on, and when?</summary>
+      <p>PC first. The game is in development and there is no release date yet. Subscribe on YouTube or join the email list to follow every milestone.</p>
+    </details>
+    <details>
+      <summary>Is the Prophet Muhammad ﷺ depicted in the game?</summary>
+      <p>No. In keeping with Islamic tradition, the Prophet Muhammad ﷺ is never depicted, and the heroes of early Islamic history are portrayed with care and reverence, grounded in the historical sources.</p>
+    </details>
+    <details>
+      <summary>How can I support Lions of God?</summary>
+      <p>Contribute on <a href="https://launchgood.com/lionsofgod" target="_blank" rel="noopener">LaunchGood</a> with a one-time or monthly gift, subscribe on YouTube, follow on Instagram, and share the devlog with someone who would love to see this game exist.</p>
+    </details>
+    <details>
+      <summary>Who is making it?</summary>
+      <p>Crescent Warriors Studio, an independent studio founded to bring the defining moments of early Islamic history to life with the craft, scale, and spectacle of any epic put on screen.</p>
+    </details>
+  </div>
 </section>
 
 <section>

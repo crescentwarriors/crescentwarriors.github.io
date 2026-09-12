@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://crescentwarriorsstudio.com/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://crescentwarriorsstudio.com/lions-of-god/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image><image:loc>https://crescentwarriorsstudio.com/lions-of-god/img/hero.jpg</image:loc><image:title>Lions of God — Hamza on the sands of Badr</image:title></image:image>
+    <image:image><image:loc>https://crescentwarriorsstudio.com/lions-of-god/img/sawlah.jpg</image:loc><image:title>The Sawlah unleashed</image:title></image:image>
+    <image:image><image:loc>https://crescentwarriorsstudio.com/lions-of-god/img/melee.jpg</image:loc><image:title>One against many</image:title></image:image>
+    <image:image><image:loc>https://crescentwarriorsstudio.com/lions-of-god/img/clash.jpg</image:loc><image:title>The armies meet</image:title></image:image>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/yBOVUzYAtGg/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Lions of God — Support the Game</video:title>
+      <video:description>Why Lions of God is being made, what has been built so far in Unreal Engine 5, and how to support the campaign on LaunchGood.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/yBOVUzYAtGg</video:player_loc>
+      <video:duration>288</video:duration>
+      <video:publication_date>2026-09-11</video:publication_date>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/GMLQcrj6OEQ/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>Lions of God — Devlog 1</video:title>
+      <video:description>Devlog Episode 1: how Lions of God began, the combat and battlefield built so far in Unreal Engine 5, and where development stands today.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/GMLQcrj6OEQ</video:player_loc>
+      <video:duration>357</video:duration>
+      <video:publication_date>2026-09-11</video:publication_date>
+    </video:video>
+  </url>
+</urlset>
