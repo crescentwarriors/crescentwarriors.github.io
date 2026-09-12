@@ -152,6 +152,46 @@
   .faq details[open] summary::after{content:'\2212'}
   .faq p{color:var(--text-dim); margin-top:12px; font-size:1rem}
   .faq a{color:var(--gold-bright)}
+  /* --- top menu --- */
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    padding:12px 24px; background:transparent; transition:background .25s, box-shadow .25s;
+  }
+  .nav.solid{background:rgba(18,16,12,.94); box-shadow:0 1px 0 rgba(201,162,75,.25)}
+  .nav-brand{
+    color:#f5edda; text-decoration:none; letter-spacing:.18em; text-transform:uppercase;
+    font-size:.8rem; white-space:nowrap; text-shadow:0 1px 6px rgba(0,0,0,.9);
+  }
+  .nav-brand:hover{color:var(--gold-bright)}
+  .nav-links{display:flex; gap:4px; margin-left:auto; min-width:0; overflow-x:auto; scrollbar-width:none; -webkit-overflow-scrolling:touch}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{
+    color:var(--text); text-decoration:none; letter-spacing:.12em; text-transform:uppercase;
+    font-size:.7rem; padding:8px 10px; white-space:nowrap; text-shadow:0 1px 6px rgba(0,0,0,.9);
+    border-bottom:1px solid transparent; transition:color .2s, border-color .2s;
+  }
+  .nav-links a:hover{color:var(--gold-bright); border-bottom-color:var(--gold)}
+  .nav-links a.nav-cta{color:var(--gold-bright); border:1px solid var(--gold); padding:7px 14px; margin-left:6px}
+  .nav-links a.nav-cta:hover{background:var(--gold); color:var(--ink)}
+  section[id]{scroll-margin-top:64px}
+  /* --- back to top --- */
+  .to-top{
+    position:fixed; right:22px; bottom:22px; z-index:50; width:46px; height:46px;
+    display:flex; align-items:center; justify-content:center;
+    background:rgba(18,16,12,.92); border:1px solid var(--gold); color:var(--gold-bright);
+    text-decoration:none; font-size:1.1rem; line-height:1;
+    opacity:0; visibility:hidden; transform:translateY(12px);
+    transition:opacity .25s, transform .25s, visibility .25s, background .2s;
+  }
+  .to-top.show{opacity:1; visibility:visible; transform:none}
+  .to-top:hover{background:var(--gold); color:var(--ink)}
+  @media (max-width:600px){
+    .nav{padding:10px 14px}
+    .nav-brand{font-size:.7rem}
+    .nav-links a{font-size:.64rem; padding:7px 7px}
+    .to-top{right:14px; bottom:14px; width:42px; height:42px}
+  }
   @media (min-width:700px){ .shots{grid-template-columns:1fr 1fr} }
 </style>
 <script type="application/ld+json">
@@ -266,7 +306,20 @@
 }
 </script>
 </head>
-<body>
+<body id="top">
+
+<nav class="nav" aria-label="Page">
+  <a class="nav-brand" href="/">Crescent Warriors Studio</a>
+  <div class="nav-links">
+    <a href="#game">The Game</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#devlog">Devlog</a>
+    <a href="#faq">Questions</a>
+    <a href="#join">Join</a>
+    <a href="#contact">Contact</a>
+    <a class="nav-cta" href="#support">Support</a>
+  </div>
+</nav>
 
 <header class="hero">
   <div class="hero-inner">
@@ -283,7 +336,7 @@
   </div>
 </header>
 
-<section>
+<section id="game">
   <h2>The Game</h2>
   <p class="lead">
     Fight the great battles of early Islamic history as the Companions — the Lions of God.
@@ -332,7 +385,7 @@
   </div>
 </section>
 
-<section>
+<section id="gallery">
   <h2>From the Battlefield</h2>
   <p class="lead" style="margin-bottom:28px">Early footage from the Battle of Badr — where development begins.</p>
   <div class="shots">
@@ -425,7 +478,7 @@
   </div>
 </section>
 
-<section>
+<section id="join">
   <h2>Join the March</h2>
   <p class="lead" style="margin-bottom:26px">Be first to every devlog and announcement — straight from the forge to your inbox.</p>
   <div class="kit-embed">
@@ -444,7 +497,7 @@
   </div>
 </section>
 
-<section class="contact">
+<section class="contact" id="contact">
   <h2>Contact</h2>
   <p><a href="mailto:lionsofgod@crescentwarriorsstudio.com">lionsofgod@crescentwarriorsstudio.com</a></p>
 </section>
@@ -453,5 +506,19 @@
   <a class="home-link" href="/">Crescent Warriors Studio</a> · © 2026 Crescent Warriors Studio FZ-LLC · Lions of God™ · All rights reserved
 </footer>
 
+<a class="to-top" href="#top" aria-label="Back to top" title="Back to top">&#9650;</a>
+<script>
+(function(){
+  var nav=document.querySelector('.nav'), top=document.querySelector('.to-top');
+  function onScroll(){
+    var y=window.scrollY||document.documentElement.scrollTop;
+    if(nav){ nav.classList.toggle('solid', y>40); }
+    if(top){ top.classList.toggle('show', y>600); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  if(top){ top.addEventListener('click', function(e){ e.preventDefault(); window.scrollTo({top:0, behavior:'smooth'}); }); }
+})();
+</script>
 </body>
 </html>
