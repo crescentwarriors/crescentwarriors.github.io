@@ -6,7 +6,7 @@
 <title>Lions of God — A Large-Scale Historical Action Game</title>
 <meta name="description" content="Lions of God is a large-scale historical action game set in early Islamic history. Fight as Hamza ibn Abdul-Muttalib at the Battle of Badr. In development in Unreal Engine 5 by Crescent Warriors Studio.">
 <meta property="og:title" content="Lions of God">
-<meta property="og:description" content="A large-scale historical action game set in early Islamic history. In development in Unreal Engine 5.">
+<meta property="og:description" content="A large-scale historical action game set in early Islamic history. In development in Unreal Engine 5. Now crowdfunding on LaunchGood.">
 <meta property="og:image" content="https://crescentwarriorsstudio.com/lions-of-god/img/hero.jpg">
 <meta property="og:url" content="https://crescentwarriorsstudio.com/lions-of-god/">
 <link rel="canonical" href="https://crescentwarriorsstudio.com/lions-of-god/">
@@ -121,6 +121,19 @@
   .kit-note{text-align:center; color:var(--sand-dim); font-size:.82rem; margin-top:14px; font-style:italic}
   .home-link{color:var(--sand-dim); text-decoration:none}
   .home-link:hover{color:var(--gold-bright)}
+  .hero-cta{display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top:26px}
+  .btn{
+    display:inline-block; padding:13px 32px; border:1px solid var(--gold);
+    color:var(--gold-bright); text-decoration:none; letter-spacing:.2em;
+    text-transform:uppercase; font-size:.75rem; transition:background .2s,color .2s;
+  }
+  .btn:hover{background:var(--gold); color:var(--ink)}
+  .btn-solid{background:var(--gold); color:var(--ink)}
+  .btn-solid:hover{background:var(--gold-bright); color:var(--ink)}
+  .video{position:relative; width:100%; aspect-ratio:16/9; border:1px solid rgba(201,162,75,.3); background:#000}
+  .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+  .support{border-top:1px solid rgba(201,162,75,.25); border-bottom:1px solid rgba(201,162,75,.25); background:var(--ink2)}
+  .cta-row{text-align:center; margin-top:30px}
   @media (min-width:700px){ .shots{grid-template-columns:1fr 1fr} }
 </style>
 </head>
@@ -133,6 +146,10 @@
     <p class="arabic" dir="rtl">أُسُود الله</p>
     <p class="tagline">A large-scale historical action game set in early Islamic history.</p>
     <span class="badge">In Development</span>
+    <div class="hero-cta">
+      <a class="btn btn-solid" href="https://launchgood.com/lionsofgod" target="_blank" rel="noopener">Support on LaunchGood</a>
+      <a class="btn" href="#devlog">Watch Devlog 1</a>
+    </div>
   </div>
 </header>
 
@@ -147,6 +164,20 @@
     Development begins where legends were forged — the Battle of Badr: capture the wells, answer the duel,
     hold the line, and turn the day.
   </p>
+</section>
+
+<section class="support" id="support">
+  <h2>Support the Campaign</h2>
+  <p class="lead">
+    Lions of God is being crowdfunded on LaunchGood. Every contribution goes directly into building the game —
+    the warriors, the battlefield, and the voices that bring Badr to life.
+  </p>
+  <div class="video" style="margin-top:32px">
+    <iframe src="https://www.youtube-nocookie.com/embed/yBOVUzYAtGg" title="Lions of God — Support the Game" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+  <div class="cta-row">
+    <a class="btn btn-solid" href="https://launchgood.com/lionsofgod" target="_blank" rel="noopener">Support on LaunchGood</a>
+  </div>
 </section>
 
 <section>
@@ -193,6 +224,17 @@
   </div>
 </section>
 
+<section id="devlog">
+  <h2>Devlog</h2>
+  <p class="lead" style="margin-bottom:32px">Episode 1 — how Lions of God began, and where the battle stands today.</p>
+  <div class="video">
+    <iframe src="https://www.youtube-nocookie.com/embed/GMLQcrj6OEQ" title="Lions of God — Devlog 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+  <div class="cta-row">
+    <a class="btn" href="https://www.youtube.com/@lionsofgodgame" target="_blank" rel="noopener">Subscribe for every episode</a>
+  </div>
+</section>
+
 <section>
   <h2>The Vision</h2>
   <div class="shots">
@@ -227,6 +269,7 @@
   <h2>Follow the Development</h2>
   <p class="lead" style="margin-bottom:28px">The battle is being forged in the open. Watch it take shape.</p>
   <div class="social-row">
+    <a href="https://launchgood.com/lionsofgod" target="_blank" rel="noopener">LaunchGood</a>
     <a href="https://www.youtube.com/@lionsofgodgame" rel="me">YouTube</a>
     <a href="https://www.instagram.com/lionsofgodgame" rel="me">Instagram</a>
   </div>
